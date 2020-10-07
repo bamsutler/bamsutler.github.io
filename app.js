@@ -1,151 +1,206 @@
-var solver = new solver,
+var solver = solver,
   results,
   model = {
     "optimize": "volume",
     "opType": "min",
     "constraints": {
-        "tritainium": {
-            "min": 0,
-            "max": 44
-        }
+        "Trinatium": { "min": 44 },
+        "Pyerite":   { "min": 44 },
+        "Mexallon":  { "min": 44 },
+        "Isogen":    { "min": 44 },
+        "Nocxium":   { "min": 44 },
+        "Zydrine":   { "min": 44 },
+        "Megacyte":  { "min": 44 },
+        "Morphite":  { "min": 44 },
     },
     "variables": {
         "Veldspar": {
             "volume": .1,
-            "tritainium": 1.99
-        }
+            "Trinatium": 413,
+            "Pyerite":   0,
+            "Mexallon":  0,
+            "Isogen":    0,
+            "Nocxium":   0,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Scordite":{
+            "volume": .15,
+            "Trinatium": 160,
+            "Pyerite":   113,
+            "Mexallon":  0,
+            "Isogen":    0,
+            "Nocxium":   0,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Pyroxeres":{
+            "volume": 1.5,
+            "Trinatium": 1753,
+            "Pyerite":   560,
+            "Mexallon":  250,
+            "Isogen":    0,
+            "Nocxium":   30,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Plagioclase":{
+            "volume": .35,
+            "Trinatium": 50,
+            "Pyerite":   63,
+            "Mexallon":  96,
+            "Isogen":    0,
+            "Nocxium":   0,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Omber":{
+            "volume": .6,
+            "Trinatium": 600,
+            "Pyerite":   73,
+            "Mexallon":  0,
+            "Isogen":    53,
+            "Nocxium":   0,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Kernite":{
+            "volume": 1.2,
+            "Trinatium": 276,
+            "Pyerite":   0,
+            "Mexallon":  503,
+            "Isogen":    50,
+            "Nocxium":   0,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Jaspet":{
+            "volume": 4,
+            "Trinatium": 0,
+            "Pyerite":   0,
+            "Mexallon":  2460,
+            "Isogen":    0,
+            "Nocxium":   46,
+            "Zydrine":   53,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Hemorphite":{
+            "volume": 3,
+            "Trinatium": 5500,
+            "Pyerite":   0,
+            "Mexallon":  0,
+            "Isogen":    160,
+            "Nocxium":   10,
+            "Zydrine":   50,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Spodumain":{
+            "volume": 3.2,
+            "Trinatium": 19700,
+            "Pyerite":   3740,
+            "Mexallon":  360,
+            "Isogen":    60,
+            "Nocxium":   0,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Dark Ochre":{
+            "volume": 1.6,
+            "Trinatium": 960,
+            "Pyerite":   0,
+            "Mexallon":  0,
+            "Isogen":    53,
+            "Nocxium":   40,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Gneiss":{
+            "volume": 2,
+            "Trinatium": 0,
+            "Pyerite":   880,
+            "Mexallon":  917,
+            "Isogen":    183,
+            "Nocxium":   0,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Hedbergite":{
+            "volume": 3,
+            "Trinatium": 2726,
+            "Pyerite":   0,
+            "Mexallon":  460,
+            "Isogen":    6,
+            "Nocxium":   13,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Crokite":{
+            "volume": 6.4,
+            "Trinatium": 38880,
+            "Pyerite":   0,
+            "Mexallon":  0,
+            "Isogen":    0,
+            "Nocxium":   93,
+            "Zydrine":   93,
+            "Megacyte":  0,
+            "Morphite":  0,
+        },
+        "Bistot":{
+            "volume": 6.4,
+            "Trinatium": 0,
+            "Pyerite":   6120,
+            "Mexallon":  0,
+            "Isogen":    0,
+            "Nocxium":   0,
+            "Zydrine":   33,
+            "Megacyte":  76,
+            "Morphite":  0,
+        },
+        "Arkonor":{
+            "volume": 6.4,
+            "Trinatium": 8800,
+            "Pyerite":   0,
+            "Mexallon":  1000,
+            "Isogen":    0,
+            "Nocxium":   0,
+            "Zydrine":   0,
+            "Megacyte":  103,
+            "Morphite":  0,
+        },
+        "Mercoxit":{
+            "volume": 8,
+            "Trinatium": 0,
+            "Pyerite":   0,
+            "Mexallon":  0,
+            "Isogen":    0,
+            "Nocxium":   0,
+            "Zydrine":   0,
+            "Megacyte":  0,
+            "Morphite":  60,
+        },
     },
 };
 
 results = solver.Solve(model);
 console.log(results);
 
-
-// // This is internal stuff. Scroll down to REPR_RATES
-// // (line 34 and on)
-// // -------------------------------------------------
-// const TRIT = 0
-// const PYER = 1
-// const MEXA = 2
-// const ISOG = 3
-// const NOCX = 4
-// const ZYDR = 5
-// const MEGA = 6
-// const MORP = 7
-// const MAX_MINERAL = MORP + 1
-
-// const VELD = 0
-// const SCOR = 1
-// const PYRO = 2
-// const PLAG = 3
-// const OMBE = 4
-// const KERN = 5
-// const JASP = 6
-// const HEMO = 7
-// const SPOD = 8
-// const DARK = 9
-// const GNEI = 10
-// const HEDB = 11
-// const CROK = 12
-// const BIST = 13
-// const ARKO = 14
-// const MERC = 15
-// const MAX_ORE = MERC + 1
-
-// // This table defines your reprocessing rates:
-// // How many mineral units you are getting from one unit of ore
-// // Update this with your own rates 
-// const BASE_REPR_RATES = {
-//     //     TRIT     PYER     MEXA     ISOG     NOCX     ZYDR    MEGA    MORP
-//     VELD: [ 1.99   , 0      , 0      , 0      , 0      , 0     , 0     , 0     ],
-//     SCOR: [ 0.7776 , 0.552  , 0      , 0      , 0      , 0     , 0     , 0     ],
-//     PYRO: [ 8.95   , 2.86   , 1.28   , 0      , 0.153  , 0     , 0     , 0     ],
-//     PLAG: [ 0.2448 , 0.312  , 0.4656 , 0      , 0      , 0     , 0     , 0     ],
-//     OMBE: [ 3.06   , 0.3876 , 0.000  , 0.2805 , 0      , 0     , 0     , 0     ],
-//     KERN: [ 1.36   , 0      , 2.45   , 0.2448 , 0      , 0     , 0     , 0     ],
-//     JASP: [ 0      , 0      , 9.59   , 0      , 0.19   , 0.22  , 0     , 0     ],
-//     HEMO: [ 28.05  , 0      , 0      , 0.816  , 0.0663 , 0.255 , 0     , 0     ],
-//     SPOD: [ 100.47 , 19.07  , 1.84   , 0.306  , 0      , 0     , 0     , 0     ],
-//     DARK: [ 4.90   , 0      , 0      , 0.2856 , 0.2193 , 0     , 0     , 0     ],
-//     GNEI: [ 0.00   , 4.49   , 4.69   , 0.9384 , 0      , 0     , 0     , 0     ],
-//     HEDB: [ 0      , 10.65  , 0      , 1.79   , 0.0351 , 0.0546, 0     , 0     ],
-//     CROK: [ 151.32 , 0      , 0      , 0      , 0.3666 , 0.3744, 0     , 0     ],
-//     BIST: [ 0      , 18.36  , 0      , 0      , 0      , 0.108 , 0.24  , 0     ],
-//     ARKO: [ 26.4   , 0      , 3      , 0      , 0      , 0     , 0.31  , 0     ],
-//     MERC: [ 0      , 0      , 0      , 0      , 0      , 0     , 0     , 0.18  ],
-//     }
-
-// // This is how many minerals we want. Fill in your values.
-// // Right now it holds values for Retriever.
-// TARGET = {
-//     TRIT: 3297180,
-//     PYER: 811446,
-//     MEXA: 278319,
-//     ISOG: 41884,
-//     NOCX: 13648,
-//     ZYDR: 4277,
-//     MEGA: 0,
-//     MORP: 0,
-//     }
-
 // // This is ore hold of your miner to cacl trips count
 // // Venture III, as you can see. You migt want to updade this
 // // If you are mining in something more excotic
 // ORE_HOLD = 9000
 
-// // Now press "Run" button at the top of page
-
-// // No user servicable parts below this line
-// // ----------------------------------------
-
-// ORE_VOLUMES = {
-//     VELD: 0.1,
-//     SCOR: 0.15,
-//     PYRO: 1.5,
-//     PLAG: 0.35,
-//     OMBE: 0.6,
-//     KERN: 1.2,
-//     JASP: 4.0,
-//     HEMO: 3.0,
-//     SPOD: 3.2,
-//     DARK: 1.6,
-//     GNEI: 2.0,
-//     HEDB: 3.0,
-//     CROK: 6.4,
-//     BIST: 6.4,
-//     ARKO: 6.4,
-//     MERC: 8.0,
-//     }
-
-// MINERAL_NAMES = {
-//     TRIT: "Trinatium",
-//     PYER: "Pyerite",
-//     MEXA: "Mexallon",
-//     ISOG: "Isogen",
-//     NOCX: "Nocxium",
-//     ZYDR: "Zydrine",
-//     MEGA: "Megacyte",
-//     MORP: "Morphite",
-//     }
-
-// ORE_NAMES = {
-//     VELD: "Veldspar",
-//     SCOR: "Scordite",
-//     PYRO: "Pyroxeres",
-//     PLAG: "Plagioclase",
-//     OMBE: "Omber",
-//     KERN: "Kernite",
-//     JASP: "Jaspet",
-//     HEMO: "Hemorphite",
-//     SPOD: "Spodumain",
-//     DARK: "Dark Ochre",
-//     GNEI: "Gneiss",
-//     HEDB: "Hedbergite",
-//     CROK: "Crokite",
-//     BIST: "Bistot",
-//     ARKO: "Arkonor",
-//     MERC: "Mercoxit",
-//     }
 
 // // We always optimize for ore volumes
 // obj = [ORE_VOLUMES[x] for x in range(MAX_ORE)]
