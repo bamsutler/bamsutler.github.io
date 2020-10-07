@@ -176,7 +176,6 @@ const ORES =  {
         "Morphite":  60,
     },
 };
-const solver = solver;
 
 function calculate(params) {
     let trit = document.getElementById('trit').nodeValue
