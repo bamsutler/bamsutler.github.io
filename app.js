@@ -176,6 +176,7 @@ const ORES =  {
         "Morphite":  60,
     },
 };
+const solver = solver;
 
 function calculate(params) {
     let trit = document.getElementById('trit').nodeValue
@@ -196,8 +197,7 @@ function calculate(params) {
     mega = mega > 0 ? mega : 0
     morph = morph > 0 ? morph : 0
 
-var solver = solver,
-results,
+var results,
 model = {
   "optimize": "volume",
   "opType": "min",
