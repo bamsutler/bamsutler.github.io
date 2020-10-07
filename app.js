@@ -178,14 +178,14 @@ const ORES =  {
 };
 
 function calculate(params) {
-    let trit = document.getElementById('trit').nodeValue
-    let pyer = document.getElementById('pyer').nodeValue
-    let mex = document.getElementById('mex').nodeValue
-    let iso = document.getElementById('iso').nodeValue
-    let nox = document.getElementById('nox').nodeValue
-    let zyd = document.getElementById('zyd').nodeValue
-    let mega = document.getElementById('mega').nodeValue
-    let morph = document.getElementById('morph').nodeValue
+    let trit = Number(document.getElementById('trit').value)
+    let pyer = Number(document.getElementById('pyer').value)
+    let mex = Number(document.getElementById('mex').value)
+    let iso = Number(document.getElementById('iso').value)
+    let nox = Number(document.getElementById('nox').value)
+    let zyd = Number(document.getElementById('zyd').value)
+    let mega = Number(document.getElementById('mega').value)
+    let morph = Number(document.getElementById('morph').value)
 
     trit = trit > 0 ? trit : 0
     pyer = pyer > 0 ? pyer : 0
