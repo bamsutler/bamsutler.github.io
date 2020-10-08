@@ -31,16 +31,8 @@
             <i class="fas fa-bold"></i>.dev
         </button>
       </a>
-
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-        data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
     </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navbarBasicExample" class="navbar-menu is-active">
       <div class="navbar-start">
         <a class="navbar-item">
           Home
@@ -56,11 +48,11 @@
           </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item">
+            <a class="navbar-item" href="evetools/ore-trip-calc">
               Ore Trip Calculator
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item">
+            <a class="navbar-item" href="https://github.com/bamsutler/bamsutler.github.io/issues/new">
               Report an issue
             </a>
           </div>
@@ -74,138 +66,8 @@
         Welcome
       </h1>
       <p class="subtitle">
-        Eve Echoes Ship trip optimiser for ore harvesting.
+        This is a place I use to keep projects I work on sometimes.
       </p>
-      <p class=""> (not implemented yet currently set for optimal reprocessing) </p>
-
-
-      <div class="columns">
-        <div class="column">
-          Enter your skill levels.
-          <div class="control">
-            <label>Common Reprocessing </label>
-            <input type="number" tabindex="1" id="common-skill" value=100 />
-          </div>
-          <div class="control">
-            <label>Uncommon Reprocessing </label>
-            <input type="number" tabindex="2" id="uncommon-skill" value=100 />
-          </div>
-          <div class="control">
-            <label>Special Reprocessing </label>
-            <input type="number" tabindex="3" id="special-skill" value=100 />
-          </div>
-          <div class="control">
-            <label>Rare Reprocessing </label>
-            <input type="number" tabindex="4" id="rare-skill" value=100 />
-          </div>
-          <div class="control">
-            <label>Precious Reprocessing </label>
-            <input type="number" tabindex="5" id="precious-skill" value=100 />
-          </div>
-        </div>
-        <div class="column">
-          <p>Enter the target number of each resource required.</p>
-
-          <div class="control">
-            <input type="number" placeholder="Trinatium" tabindex="6" id="trit" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Pyerite" tabindex="7" id="pyer" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Mexallon" tabindex="8" id="mex" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Isogen" tabindex="9" id="iso" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Nocxium" tabindex="10" id="nox" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Zydrine" tabindex="11" id="zyd" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Megacyte" tabindex="12" id="mega" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Morphite" tabindex="13" id="morph" />
-          </div>
-          <button class="button is-small is-success " onclick="calculate()">Submit</button>
-        </div>
-        <div class="column">
-          How much to mine !?
-          <div class="control">
-            <label>Veldspar</label>
-            <input disabled placeholder="Veldspar" tabindex="6" id="veld" />
-          </div>
-          <div class="control">
-            <label>Scordite</label>
-            <input disabled placeholder="Scordite" tabindex="7" id="scor" />
-          </div>
-          <div class="control">
-            <label>Pyroxeres</label>
-            <input disabled placeholder="Pyroxeres" tabindex="8" id="pyro" />
-          </div>
-          <div class="control">
-            <label>Plagioclase</label>
-            <input disabled placeholder="Plagioclase" tabindex="9" id="plagio" />
-          </div>
-          <div class="control">
-            <label>Omber</label>
-            <input disabled placeholder="Omber" tabindex="10" id="omber" />
-          </div>
-          <div class="control">
-            <label>Kernite</label>
-            <input disabled placeholder="Kernite" tabindex="11" id="kernite" />
-          </div>
-          <div class="control">
-            <label>Jaspet</label>
-            <input disabled placeholder="Jaspet" tabindex="12" id="jaspet" />
-          </div>
-          <div class="control">
-            <label>Hemorphite</label>
-            <input disabled placeholder="Hemorphite" tabindex="13" id="hemo" />
-          </div>
-          <div class="control">
-            <label>Spodumain</label>
-            <input disabled placeholder="Spodumain" tabindex="13" id="spod" />
-          </div>
-          <div class="control">
-            <label>Dark Ochre</label>
-            <input disabled placeholder="Dark Ochre" tabindex="13" id="dark" />
-          </div>
-          <div class="control">
-            <label>Gneiss</label>
-            <input disabled placeholder="Gneiss" tabindex="13" id="gneiss" />
-          </div>
-          <div class="control">
-            <label>Hedbergite</label>
-            <input disabled placeholder="Hedbergite" tabindex="13" id="hedber" />
-          </div>
-          <div class="control">
-            <label>Crokite</label>
-            <input disabled placeholder="Crokite" tabindex="13" id="crok" />
-          </div>
-          <div class="control">
-            <label class="is-label">Bistot</label>
-            <input disabled placeholder="Bistot" tabindex="13" id="bist" />
-          </div>
-          <div class="control">
-            <label>Arkonor</label>
-            <input disabled placeholder="Arkonor" tabindex="13" id="ark" />
-          </div>
-          <div class="control">
-            <label>Mercoxit</label>
-            <input disabled placeholder="Mercoxit" tabindex="13" id="merc" />
-          </div>
-        </div>
-        <div class="column">
-          Trip output:
-          <div class="control">
-            <textarea class="textarea" readonly id="output-area"></textarea>
-          </div>
-        </div>
-      </div>
 
     </div>
   </section>
