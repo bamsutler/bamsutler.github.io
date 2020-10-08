@@ -238,7 +238,43 @@ model = {
 };
 
 results = solver.Solve(model);
-console.log(results);
+
+let veld = document.getElementById('veld');
+let scor = document.getElementById('scor');
+let pyro = document.getElementById('pyro');
+let plagio = document.getElementById('plagio');
+let omber = document.getElementById('omber');
+let kernite = document.getElementById('kernite');
+let jaspet = document.getElementById('jaspet');
+let hemo = document.getElementById('hemo');
+let spod = document.getElementById('spod');
+let dark = document.getElementById('dark');
+let gneiss = document.getElementById('gneiss');
+let hedber = document.getElementById('hedber');
+let crok = document.getElementById('crok');
+let bist = document.getElementById('bist');
+let ark = document.getElementById('ark');
+let merc = document.getElementById('merc');
+let output_area = document.getElementById('output-area');
+
+output_area.value = JSON.stringify(results)
+veld.value = Math.ceil(results["Veldspar"]) || 0;
+scor.value = Math.ceil(results["Scordite"]) || 0;
+pyro.value = Math.ceil(results["Pyroxeres"]) || 0;
+plagio.value = Math.ceil(results["Plagioclase"]) || 0;
+omber.value = Math.ceil(results["Omber"]) || 0;
+kernite.value = Math.ceil(results["Kernite"]) || 0;
+jaspet.value = Math.ceil(results["Jaspet"]) || 0;
+hemo.value = Math.ceil(results["Hemorphite"]) || 0;
+spod.value = Math.ceil(results["Spodumain"]) || 0;
+dark.value = Math.ceil(results["Dark Ochre"]) || 0;
+gneiss.value = Math.ceil(results["Gneiss"]) || 0;
+hedber.value = Math.ceil(results["Hedbergite"]) || 0;
+crok.value = Math.ceil(results["Crokite"]) || 0;
+bist.value = Math.ceil(results["Bistot"]) || 0;
+ark.value = Math.ceil(results["Arkonor"]) || 0;
+merc.value = Math.ceil(results["Mercoxit"]) || 0;
+
 }
 
 let adjustOreOutputs = (common, uncommon, special, rare, precious) => {
