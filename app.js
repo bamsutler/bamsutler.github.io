@@ -1,5 +1,5 @@
 const ORES =  {
-    "Veldspar": {
+    "Veldspar":{
         "volume": .1,
         "Trinatium": 413,
         "Pyerite":   0,
@@ -200,8 +200,8 @@ var results,
 model = {
   "optimize": "volume",
   "opType": "min",
-  "constraints": {
-      "Trinatium": { "min": trit },
+  "constraints":{
+      "Trinatium":{ "min": trit },
       "Pyerite":   { "min": pyer },
       "Mexallon":  { "min": mex },
       "Isogen":    { "min": iso },

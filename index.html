@@ -1,49 +1,204 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.4.0/dist/tf.min.js"></script>
-    <script src="https://unpkg.com/javascript-lp-solver/prod/solver.js"></script>
-    <script src="app.js"></script>
-    <script data-ad-client="ca-pub-8324850828530436" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <title>Bamsutlers Homepage</title>
-    </head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.4.0/dist/tf.min.js"></script>
+  <script src="https://unpkg.com/javascript-lp-solver/prod/solver.js"></script>
+  <script src="app.js"></script>
+  <script data-ad-client="ca-pub-8324850828530436" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <title>Bamsutlers Homepage</title>
+</head>
+
 <body>
-    <section class="section">
-        <div class="container">
-          <h1 class="title">
-            Welcome
-          </h1>
-          <p class="subtitle">
-            Eve Echoes Ship trip optimiser for ore harvesting.
-          </p>
-          <p class="">  Enter your skill levels. (not implemented yet currently set for optimal reprocessing) </p>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://sambutler.dev">
+        <button class="button is-large">          
+            <i class="fas fa-strikethrough"></i>
+            <i class="fas fa-bold"></i>.dev
+        </button>
+      </a>
 
-    
-   
-    <input type="number" placeholder="Common Reprocess Skill" tabindex="1" id="reprocess" disabled value=100/>
-    <input type="number" placeholder="Uncommon Reprocess Skill" tabindex="2 id="reprocess" disabled value=100/>
-    <input type="number" placeholder="Special Reprocess Skill" tabindex="3" id="reprocess" disabled value=100/>
-    <input type="number" placeholder="Rare Reprocess Skill" tabindex="4" id="reprocess" disabled value=100/>
-    <input type="number" placeholder="Precious Reprocess Skill" tabindex="5" id="reprocess" disabled value=100/>
-    <p>Enter the target number of each resource required.</p>
-    <input type="number" placeholder="Trinatium" tabindex="6" id="trit"/>
-    <input type="number" placeholder="Pyerite"   tabindex="7" id="pyer"/>
-    <input type="number" placeholder="Mexallon"  tabindex="8" id="mex"/>
-    <input type="number" placeholder="Isogen"    tabindex="9" id="iso"/>
-    <input type="number" placeholder="Nocxium"   tabindex="10" id="nox"/>
-    <input type="number" placeholder="Zydrine"   tabindex="11" id="zyd"/>
-    <input type="number" placeholder="Megacyte"  tabindex="12" id="mega"/>
-    <input type="number" placeholder="Morphite"  tabindex="13" id="morph"/>
-    <button onclick="calculate()">Submit</button>
-</div>
-</section>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Home
+        </a>
+
+        <a class="navbar-item">
+          Documentation
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Eve Echoes Tools
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              Ore Trip Calculator
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Welcome
+      </h1>
+      <p class="subtitle">
+        Eve Echoes Ship trip optimiser for ore harvesting.
+      </p>
+      <p class=""> (not implemented yet currently set for optimal reprocessing) </p>
+
+
+      <div class="columns">
+        <div class="column">
+          Enter your skill levels.
+          <div class="control">
+            <label>Common Reprocessing </label>
+            <input type="number" tabindex="1" id="reprocess" disabled value=100 />
+          </div>
+          <div class="control">
+            <label>Uncommon Reprocessing </label><input type="number" tabindex="2 id=" reprocess" disabled value=100 />
+          </div>
+          <div class="control">
+            <label>Special Reprocessing </label><input type="number" placeholder="Special Reprocess Skill" tabindex="3"
+              id="reprocess" disabled value=100 />
+          </div>
+          <div class="control">
+            <label>Rare Reprocessing </label><input type="number" placeholder="Rare Reprocess Skill" tabindex="4"
+              id="reprocess" disabled value=100 />
+          </div>
+          <div class="control">
+            <label>Precious Reprocessing </label><input type="number" placeholder="Precious Reprocess Skill"
+              tabindex="5" id="reprocess" disabled value=100 />
+          </div>
+        </div>
+        <div class="column">
+          <p>Enter the target number of each resource required.</p>
+
+          <div class="control">
+            <input type="number" placeholder="Trinatium" tabindex="6" id="trit" />
+          </div>
+          <div class="control">
+            <input type="number" placeholder="Pyerite" tabindex="7" id="pyer" />
+          </div>
+          <div class="control">
+            <input type="number" placeholder="Mexallon" tabindex="8" id="mex" />
+          </div>
+          <div class="control">
+            <input type="number" placeholder="Isogen" tabindex="9" id="iso" />
+          </div>
+          <div class="control">
+            <input type="number" placeholder="Nocxium" tabindex="10" id="nox" />
+          </div>
+          <div class="control">
+            <input type="number" placeholder="Zydrine" tabindex="11" id="zyd" />
+          </div>
+          <div class="control">
+            <input type="number" placeholder="Megacyte" tabindex="12" id="mega" />
+          </div>
+          <div class="control">
+            <input type="number" placeholder="Morphite" tabindex="13" id="morph" />
+          </div>
+          <button class="button is-small is-success " onclick="calculate()">Submit</button>
+        </div>
+        <div class="column">
+          How much to mine !?
+          <div class="control">
+            <label>Veldspar</label>
+            <input disabled placeholder="Veldspar" tabindex="6" id="veld" />
+          </div>
+          <div class="control">
+            <label>Scordite</label>
+            <input disabled placeholder="Scordite" tabindex="7" id="scor" />
+          </div>
+          <div class="control">
+            <label>Pyroxeres</label>
+            <input disabled placeholder="Pyroxeres" tabindex="8" id="pyro" />
+          </div>
+          <div class="control">
+            <label>Plagioclase</label>
+            <input disabled placeholder="Plagioclase" tabindex="9" id="plagio" />
+          </div>
+          <div class="control">
+            <label>Omber</label>
+            <input disabled placeholder="Omber" tabindex="10" id="omber" />
+          </div>
+          <div class="control">
+            <label>Kernite</label>
+            <input disabled placeholder="Kernite" tabindex="11" id="kernite" />
+          </div>
+          <div class="control">
+            <label>Jaspet</label>
+            <input disabled placeholder="Jaspet" tabindex="12" id="jaspet" />
+          </div>
+          <div class="control">
+            <label>Hemorphite</label>
+            <input disabled placeholder="Hemorphite" tabindex="13" id="hemo" />
+          </div>
+          <div class="control">
+            <label>Spodumain</label>
+            <input disabled placeholder="Spodumain" tabindex="13" id="spod" />
+          </div>
+          <div class="control">
+            <label>Dark Ochre</label>
+            <input disabled placeholder="Dark Ochre" tabindex="13" id="dark" />
+          </div>
+          <div class="control">
+            <label>Gneiss</label>
+            <input disabled placeholder="Gneiss" tabindex="13" id="gneiss" />
+          </div>
+          <div class="control">
+            <label>Hedbergite</label>
+            <input disabled placeholder="Hedbergite" tabindex="13" id="hedber" />
+          </div>
+          <div class="control">
+            <label>Crokite</label>
+            <input disabled placeholder="Crokite" tabindex="13" id="crok" />
+          </div>
+          <div class="control">
+            <label class="is-label">Bistot</label>
+            <input disabled placeholder="Bistot" tabindex="13" id="bist" />
+          </div>
+          <div class="control">
+            <label>Arkonor</label>
+            <input disabled placeholder="Arkonor" tabindex="13" id="ark" />
+          </div>
+          <div class="control">
+            <label>Mercoxit</label>
+            <input disabled placeholder="Mercoxit" tabindex="13" id="merc" />
+          </div>
+        </div>
+        <div class="column">
+          Trip output:
+          <div class="control">
+            <textarea class="textarea" readonly id="output-area"></textarea>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 </body>
-<script type="application/javascript">
-    if(tf) console.log("helo tf")
-</script>
-</html>
 
+</html>
