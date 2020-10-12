@@ -12,23 +12,23 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <title>Bamsutlers Homepage</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74363785-7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74363785-7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-74363785-7');
-</script>
+    gtag('config', 'UA-74363785-7');
+  </script>
 </head>
 
 <body>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://sambutler.dev">
-        <button class="button is-large">          
-            <i class="fas fa-strikethrough"></i>
-            <i class="fas fa-bold"></i>.dev
+        <button class="button is-large">
+          <i class="fas fa-strikethrough"></i>
+          <i class="fas fa-bold"></i>.dev
         </button>
       </a>
     </div>
@@ -64,70 +64,86 @@
   <section class="section">
     <div class="container">
       <h1 class="title">
-        Eve Ore trip optimisation calculator
+        Eve Ore Mining Optimization Calculator
       </h1>
       <p class="subtitle">
-        This is a tool to tell where given the number of minereals you need, it will tell you what ore to mine and how many trips it will take to get them based on your skills.
-        Currently it is not set up to tell you trip number but is will tell you optimal ore to mine.
-        Enter your reprocessing skills as if they were percentages. For example if your common ore reprocess is 30% enter 30.
+        Given the size of the ore hold of your ship, your reprocessing skill levels, and the amount of each mineral you
+        need this calculator will tell you the optimal ores to mine to minimize the number of trips needs to collect the
+        given resources.
+      <p>
+        Currently, the trip number is not calculated, but the optimal ore based on volume is calculated to minimize
+        trips.
       </p>
-
-
+      </p>
       <div class="columns">
-        <div class="column">
-          Enter your skill levels.
-          <div class="control">
-            <label>Common Reprocessing </label>
-            <input type="number" tabindex="1" id="common-skill" value=100 />
-          </div>
-          <div class="control">
-            <label>Uncommon Reprocessing </label>
-            <input type="number" tabindex="2" id="uncommon-skill" value=100 />
-          </div>
-          <div class="control">
-            <label>Special Reprocessing </label>
-            <input type="number" tabindex="3" id="special-skill" value=100 />
-          </div>
-          <div class="control">
-            <label>Rare Reprocessing </label>
-            <input type="number" tabindex="4" id="rare-skill" value=100 />
-          </div>
-          <div class="control">
-            <label>Precious Reprocessing </label>
-            <input type="number" tabindex="5" id="precious-skill" value=100 />
-          </div>
+        <div class="section content column">
+          <h4 class="title">
+            Reprocessing Skills
+            </h1>
+            <p>
+              Enter your reprocessing skills as if they were percentages. For example, if your Common Ore Reprocessing
+              skill
+              is
+              42% (as seen on a Common Ore detail screen) enter 42.
+            </p>
+            <div class="control">
+              <label>Common Reprocessing </label>
+              <input type="number" tabindex="1" id="common-skill" value=100 />
+            </div>
+            <div class="control">
+              <label>Uncommon Reprocessing </label>
+              <input type="number" tabindex="2" id="uncommon-skill" value=100 />
+            </div>
+            <div class="control">
+              <label>Special Reprocessing </label>
+              <input type="number" tabindex="3" id="special-skill" value=100 />
+            </div>
+            <div class="control">
+              <label>Rare Reprocessing </label>
+              <input type="number" tabindex="4" id="rare-skill" value=100 />
+            </div>
+            <div class="control">
+              <label>Precious Reprocessing </label>
+              <input type="number" tabindex="5" id="precious-skill" value=100 />
+            </div>
         </div>
-        <div class="column">
-          <p>Enter the target number of each resource required.</p>
+        <div class="section content column">
+          <h4 class="title">
+            Minerals Required
+            </h1>
+            <p>Enter the target number of each resource required.</p>
 
-          <div class="control">
-            <input type="number" placeholder="Trinatium" tabindex="6" id="trit" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Pyerite" tabindex="7" id="pyer" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Mexallon" tabindex="8" id="mex" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Isogen" tabindex="9" id="iso" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Nocxium" tabindex="10" id="nox" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Zydrine" tabindex="11" id="zyd" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Megacyte" tabindex="12" id="mega" />
-          </div>
-          <div class="control">
-            <input type="number" placeholder="Morphite" tabindex="13" id="morph" />
-          </div>
-          <button class="button is-small is-success " onclick="calculate()">Submit</button>
+            <div class="control">
+              <input type="number" placeholder="Trinatium" tabindex="6" id="trit" />
+            </div>
+            <div class="control">
+              <input type="number" placeholder="Pyerite" tabindex="7" id="pyer" />
+            </div>
+            <div class="control">
+              <input type="number" placeholder="Mexallon" tabindex="8" id="mex" />
+            </div>
+            <div class="control">
+              <input type="number" placeholder="Isogen" tabindex="9" id="iso" />
+            </div>
+            <div class="control">
+              <input type="number" placeholder="Nocxium" tabindex="10" id="nox" />
+            </div>
+            <div class="control">
+              <input type="number" placeholder="Zydrine" tabindex="11" id="zyd" />
+            </div>
+            <div class="control">
+              <input type="number" placeholder="Megacyte" tabindex="12" id="mega" />
+            </div>
+            <div class="control">
+              <input type="number" placeholder="Morphite" tabindex="13" id="morph" />
+            </div>
+            <button class="button is-small is-success " onclick="calculate()">Submit</button>
         </div>
-        <div class="column">
-          How much to mine !?
+      </div>
+      <div class="section content">
+        <h4 class="title">
+          Ore Amounts to Mine (round to nearest 100)
+          </h1>
           <div class="control">
             <label>Veldspar</label>
             <input disabled placeholder="Veldspar" tabindex="6" id="veld" />
@@ -192,16 +208,21 @@
             <label>Mercoxit</label>
             <input disabled placeholder="Mercoxit" tabindex="13" id="merc" />
           </div>
-        </div>
-        <div class="column">
-          Trip output:
-          <div class="control">
-            <textarea class="textarea" readonly id="output-area"></textarea>
-          </div>
+      </div>
+      <div class="column">
+        Trip output:
+        <div class="control">
+          <textarea class="textarea" readonly id="output-area"></textarea>
         </div>
       </div>
-
     </div>
+    </div>
+    <p class="section">
+      If you see any bugs with this or want to let me know how to improve it let me know <a
+        href="https://github.com/bamsutler/bamsutler.github.io/issues/new">
+        HERE
+      </a> or on discord bamsutler#2840.
+    </p>
   </section>
 </body>
 
